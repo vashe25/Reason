@@ -1,9 +1,8 @@
 <?php
-/**
-* reason backuper
-*/
-class Reason
-{
+namespace app;
+
+class ReasonBackup {
+
 	protected $creation_date = '';
 	protected $dir_name = '';
 	protected $targetDir = '';
@@ -172,11 +171,4 @@ class Reason
 			return false;
 		}
 	}
-
 }
-
-$reason = new Reason();
-/*if (isset($argv[1])) {
-	$reason->setTargetDir($argv[1]);
-}*/
-$reason->run();
