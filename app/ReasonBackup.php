@@ -34,7 +34,7 @@ class ReasonBackup {
 		$this->creation_date = date('Y-m-d H:i');
 		$this->setCurrentDirName();
 		$this->targetDir = ".";
-		$this->zip = new ZipArchive();
+		$this->zip = new \ZipArchive();
 	}
 
 	public function run() {
@@ -157,7 +157,7 @@ class ReasonBackup {
 
 	protected function writeZip($files, $fileName = "data.zip") {
 		if (is_string($files) or is_array($files)) {
-			$this->zip->open($fileName, ZipArchive::CREATE);
+			$this->zip->open($fileName, \ZipArchive::CREATE);
 			if (is_array($files)) {
 				foreach ($files as $file) {
 					$this->zip->addFile(ltrim($file, ".\\"));
